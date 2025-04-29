@@ -1,0 +1,8 @@
+Package: graph-v1.0.0
+Version: 1.0.0
+Depends: openjdk-17-jre, make
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Ethan <edanitz@zagmail.gonzaga.edu>
+Description: This is a graph service

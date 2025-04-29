@@ -240,8 +240,9 @@ public class HW4 {
 
   
   public static void main(String [] args) throws Exception {
-    runDirectedGraphBFS();
-    runDirectedGraphDiameter();
+    System.out.println("Hello World!");
+    //runDirectedGraphBFS();
+    //runDirectedGraphDiameter();
   }
 
 }

@@ -1,0 +1,13 @@
+[Unit]
+Description=common graph algorithms using an adjacency List or Matrix
+
+[Service]
+User=grapher
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/bin/java hello
+# optional items below
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

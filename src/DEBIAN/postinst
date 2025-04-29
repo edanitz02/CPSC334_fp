@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# check if counter user exists
+if ! id -u grapher >/dev/null 2>&1; then
+	echo "Creating grapher user"
+	sudo adduser --system grapher
+fi
+
+# Starting service
+echo "Enabling service.."
+sudo systemctl daemon-reload
+sudo systemctl enable counter.service
+sudo systemctl start counter.service

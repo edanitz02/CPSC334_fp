@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Stop graph service
+echo "Stopping graph service"
+sudo systemctl stop graph.service
