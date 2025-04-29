@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk maven
+          sudo apt-get install -y openjdk-21-jdk maven
       - name: Test project
         run: |
           cd package
@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
+          sudo apt-get install -y openjdk-21-jdk
       - name: Build project
         run: |
           make build-deb
@@ -52,7 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
+          sudo apt-get install -y openjdk-21-jdk
           sudo apt-get install lintian
       - name: Lint Package
         run: |
