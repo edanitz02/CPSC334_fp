@@ -8,34 +8,45 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - name: Build project
         run: |
-          make build
+          make build-deb
+          ls -al *.deb
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
-          sudo apt-get install -y 
+          sudo apt-get install -y maven
       - name: Test project
         run: |
-          make build-deb
-          make test
+          cd package
+          mvn test
   artifact:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - name: Build project
         run: |
           make build-deb
@@ -50,10 +61,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
           sudo apt-get install lintian
       - name: Lint Package
         run: |
