@@ -20,12 +20,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y openjdk-17-jdk
-          sudo apt-get install -y 
+          sudo apt-get install -y openjdk-17-jdk maven
       - name: Test project
         run: |
-          make build-deb
-          make test
+          cd package
+          mvn test
   artifact:
     runs-on: ubuntu-latest
     timeout-minutes: 2
