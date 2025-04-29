@@ -9,5 +9,5 @@ fi
 # Starting service
 echo "Enabling service.."
 sudo systemctl daemon-reload
-sudo systemctl enable counter.service
-sudo systemctl start counter.service
+sudo systemctl enable graph.service
+sudo systemctl start graph.service
